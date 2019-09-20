@@ -6,16 +6,16 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name:'sparkDemo',
+            name: 'sparkDemo',
         }
     }
 
 
     render() {
         return (
-            <div className="App">
-                <Demo name={this.state.name}></Demo>
-            </div>
+                <div className="App">
+                    <Demo name={this.state.name}></Demo>
+                </div>
         );
     }
 }
