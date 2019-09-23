@@ -6,6 +6,7 @@
 import React, {Component} from "react";
 import {Button, Typography} from "antd";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import Http from "../axios/axios"
 import About from "./router/About"
 import Home from "./router/Home"
 import Topics from "./router/Topics"
@@ -51,6 +52,7 @@ export default class Demo extends Component {
             isLoggedIn: false,
             value: "",
         }
+        this.Http = new Http();
     }
 
     componentDidMount() {
@@ -58,6 +60,16 @@ export default class Demo extends Component {
         this.timerID = setInterval(() => {
             this.tick();
         }, 1000);
+        console.log("--------http------");
+        this.Http.post(
+            "/smartHealth/healthConsultation/getPersons",
+            {
+                user_id: "1550000127",
+                token: "inner_token_for_test"
+            }).then((val => {
+            console.log(val)
+        }))
+
     }
 
     componentWillUnmount() {
