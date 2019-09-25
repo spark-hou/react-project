@@ -1,0 +1,224 @@
+$color-border: #e1e1e1;
+/*粗体*/
+.font-bold {
+  font-weight: bold;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+/*边框*/
+.border-top {
+  border-top: 1px solid $color-border;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $color-border;
+}
+
+.border-bottom-dark {
+  border-bottom: 1px solid $color-border;
+}
+
+.border-left {
+  border-left: 1px solid $color-border;
+}
+
+.border-right {
+  border-right: 1px solid $color-border;
+}
+
+.border-none {
+  border: none;
+}
+
+.outline-none {
+  outline: none;
+}
+
+
+/*文字位置（居中、居左、居右）*/
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/*下划线文字*/
+.text-underline {
+  text-decoration: underline;
+}
+
+
+.m-r-35 {
+  margin-right: 35px;
+}
+
+.m-t-5 {
+  margin-top: 5px;
+}
+
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.m-t-15 {
+  margin-top: 15px;
+}
+
+.m-r-5 {
+  margin-right: 5px;
+}
+
+.m-b-5 {
+  margin-bottom: 5px;
+}
+
+.m-b-15 {
+  margin-bottom: 15px;
+}
+
+.m-l-0 {
+  margin-left: 0;
+}
+
+.m-l-5 {
+  margin-left: 5px;
+}
+
+.m-l-10 {
+  margin-left: 10px;
+}
+
+
+//去掉内边距
+.padding-none {
+  padding: 0;
+}
+
+.margin-none {
+  margin: 0;
+}
+
+
+.width-full {
+  width: 100%;
+}
+
+.height-full {
+  height: 100%;
+}
+
+.height-full2 {
+  height: calc(100% - 60px);
+}
+
+//半透明度
+.opacity-50 {
+  opacity: .5;
+}
+
+.opacity-30 {
+  opacity: .3;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.display-flex {
+  display: flex;
+}
+
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.vertical-top {
+  vertical-align: top;
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+
+.p-tb-10 {
+  padding: 10px 0;
+}
+
+.p-t-10 {
+  padding-top: 10px;
+}
+
+.p-b-10 {
+  padding-bottom: 10px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-b-20 {
+  padding-bottom: 20px;
+}
+
+
+//垂直居中
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//溢出文本显示省略号
+.overflow-hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  display: inline-block;
+}
+
+.webkit-line-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

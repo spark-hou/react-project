@@ -6,6 +6,25 @@
 
 import axios from "axios"
 
+axios.interceptors.request.use(
+    config => {
+        console.log("我是请求拦截器", config);
+        return config
+    },
+    err => {
+        return Promise.reject(err)
+    })
+axios.interceptors.response.use(
+    response => {
+        //拦截响应，做统一处理
+        console.log("我是响应拦截器", response);
+        return response
+    },
+    //接口错误状态处理，也就是说无响应时的处理
+    error => {
+        return Promise.reject(error.response.status) // 返回接口返回的错误信息
+    })
+
 export default class Http {
     get(url, params) {
 
@@ -23,11 +42,6 @@ export default class Http {
                     reject(reason)
                 })
 
-            // .finally(() => {
-            //     if (url) {
-            //         BaseVue.methods.showLoading(false);
-            //     }
-            // })
 
         });
         return pro;
