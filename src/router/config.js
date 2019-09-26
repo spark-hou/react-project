@@ -4,6 +4,7 @@
  * @Description :
  */
 import Index from "../components/Index/Index"
+import Login from "../components/Login/Login"
 
 /*{
     path: "/topics",
@@ -23,5 +24,9 @@ export const routes = [
         component: Index,
         exact: true,
         routs: []
+    },
+    {
+        path: "/login",
+        component: Login,
     }
 ]

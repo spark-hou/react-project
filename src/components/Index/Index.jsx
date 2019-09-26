@@ -5,6 +5,7 @@
  */
 import React, {Component} from "react";
 import {Layout, Breadcrumb, Icon, Button, Dropdown, Menu,Avatar } from 'antd';
+import {Link} from "react-router-dom";
 import IndexMenu from "./IndexMenu"
 import "./Index.scss"
 
@@ -13,9 +14,7 @@ const {Header, Content, Sider, Footer} = Layout;
 const menu = (
     <Menu>
         <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-                1st menu item
-            </a>
+            <Link to="/Login">登录</Link>
         </Menu.Item>
         <Menu.Item>
             <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
@@ -61,11 +60,10 @@ class Index extends Component {
                     <Header className="header">
                         <div className="left">
                             <div className="logo">
-                                <img src="" alt=""/>
+                                <img src={[require("../../asset/img/index/logo.jpg")]} alt=""/>
                             </div>
                             <Button type="primary"
-                                    onClick={this.toggleCollapsed}
-                                    style={{marginBottom: 16}}>
+                                    onClick={this.toggleCollapsed}>
                                 <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}/>
                             </Button>
                         </div>
