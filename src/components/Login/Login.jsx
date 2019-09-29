@@ -29,7 +29,7 @@ class Login extends Component {
      */
     handleSubmit = () => {
         this.props.form.validateFieldsAndScroll((err, values) => {
-            console.log(values);
+            console.log("收集的表单内容", values);
             if (!err) {
                 return;
             }
@@ -41,7 +41,7 @@ class Login extends Component {
         return (
             <div className="login">
                 <div className="loginBox">
-                    <Form  className="login-form">
+                    <Form className="login-form">
                         <Form.Item>
                             {getFieldDecorator('userName', {
                                 rules: [{required: true, message: 'Please input your username!'}],
