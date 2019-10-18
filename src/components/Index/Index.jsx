@@ -4,8 +4,8 @@
  * @Description :  Index  -->
  */
 import React, {Component} from "react";
-import {Layout, Breadcrumb, Icon, Button, Dropdown, Menu,Avatar } from 'antd';
-import {Link} from "react-router-dom";
+import {Layout, Breadcrumb, Icon, Button, Dropdown, Menu, Avatar} from 'antd';
+import {Link, Route} from "react-router-dom";
 import IndexMenu from "./IndexMenu"
 import "./Index.scss"
 
@@ -14,12 +14,10 @@ const {Header, Content, Sider, Footer} = Layout;
 const menu = (
     <Menu>
         <Menu.Item>
-            <Link to="/Login">登录</Link>
+            <Link to="/login">登录</Link>
         </Menu.Item>
         <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
-                2nd menu item
-            </a>
+            <Link to="/personalCenter/personalInfo">个人中心</Link>
         </Menu.Item>
         <Menu.Item>
             <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
@@ -38,6 +36,7 @@ class Index extends Component {
     }
 
     componentDidMount() {
+        console.log("Index---props", this.props)
     }
 
     componentWillUnmount() {
@@ -69,7 +68,7 @@ class Index extends Component {
                         </div>
                         <div className="right">
                             <Dropdown overlay={menu}>
-                                <Avatar size="large" icon="user" />
+                                <Avatar size="large" icon="user"/>
                             </Dropdown>
                         </div>
                     </Header>
@@ -96,9 +95,12 @@ class Index extends Component {
                                 }}
                             >
                                 <div className="indexContainer">
-                                    ha1
-                                    <br/>
-                                    Really
+                                    {/*路由内容*/}
+                                    {
+                                        this.props.routes.map((item, index) => {
+                                            return <Route path={item.path} key={index} component={item.component}/>
+                                        })
+                                    }
                                 </div>
                             </Content>
                             <Footer className="indexFoot overflow-hidden" style={{textAlign: 'center'}}>Ant Design ©2018

@@ -5,28 +5,22 @@
  */
 import Index from "../components/Index/Index"
 import Login from "../components/Login/Login"
+import PersonalInfo from "../components/personalCenter/PersonalInfo/PersonalInfo"
 
-/*{
-    path: "/topics",
-    component: Topics,
-    exact: true,
-    routes: [
-    {
-        path: "/topics/bus",
-        component: Bus
-    }
-]
-}*/
 
 export const routes = [
     {
-        path: "/",
-        component: Index,
-        exact: true,
-        routs: []
-    },
-    {
         path: "/login",
         component: Login,
-    }
+    },
+    {
+        path: "/",
+        component: Index,
+        routes: [
+            {
+                path: ["/", "/personalCenter/personalInfo"],
+                component: PersonalInfo
+            }
+        ]
+    },
 ]

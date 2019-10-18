@@ -1,49 +1,54 @@
 import React, {Component} from 'react';
 import './App.scss';
-//import Demo from "./demo/Demo"
-// import Index from "./components/Index/Index"
 import {routes} from "./router/config"
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {Route, Switch,withRouter} from "react-router-dom";
 
 class App extends Component {
     constructor(props) {
         super(props);
+        props.history.listen(()=>{  //在这里监听location对象
+            console.log(this.props);  //切换路由的时候输出"/one/users"和"/one/companies"
+        })
         this.state = {
             name: 'sparkDemo',
         }
     }
 
 
+
     render() {
         return (
             <div className="App">
-                <Router>
-                    {
-                        routes.map((item, i) => {
-                                if (item.exact) {
-                                    return <Route path={item.path}
-                                                  exact
-                                                  key={i}
-                                                  render={props => (
-                                                      <item.component {...props} routes={item.routes}/>
-                                                  )}
-                                    />
-                                } else {
-                                    return <Route path={item.path}
-                                                  key={i}
-                                                  render={props => (
-                                                      <item.component {...props} routes={item.routes}/>
-                                                  )}
-                                    />
+
+                    <Switch>
+                        {
+                            routes.map((item, i) => {
+                                    if (item.exact) {
+                                        return <Route path={item.path}
+                                                      exact
+                                                      key={i}
+                                                      render={props => (
+                                                          <item.component {...props} routes={item.routes}/>
+                                                      )}
+                                        />
+                                    } else {
+                                        return <Route path={item.path}
+                                                      key={i}
+                                                      render={props => (
+                                                          <item.component {...props} routes={item.routes}/>
+                                                      )}
+                                        />
+                                    }
                                 }
-                            }
-                        )
-                    }
-                </Router>
+                            )
+                        }
+                    </Switch>
+
+
 
             </div>
         );
     }
 }
 
-export default App;
+export default withRouter(App);
